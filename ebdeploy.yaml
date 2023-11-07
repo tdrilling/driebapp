@@ -1,0 +1,20 @@
+# Install Python 3.9
+sudo apt-get install python3.9
+
+# Install pip
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+
+# Install the EB CLI
+pip install awsebcli
+
+# Export the env variables required
+# by the EB CLI
+export AWS_ACCESS_KEY_ID="MY_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY="MY_SECRET_ACCESS_KEY"
+export AWS_DEFAULT_REGION="us-east-1"
+
+# Deploy to EB
+# This command will zip up the files in the directory
+# and upload the archive to S3
+eb deploy
